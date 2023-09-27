@@ -12,9 +12,7 @@ export class IntervenantsComponent  implements OnInit {
 
   ngOnInit() {}
   returnHome() {
-    console.log("il veut afficher la liste des sessions")
     this.route.navigate(['/folder/home/']);
-    //this.folderService.currentPageSubject.next(this.folderService.LISTE_INTERVENANTS);
   }
 
 }

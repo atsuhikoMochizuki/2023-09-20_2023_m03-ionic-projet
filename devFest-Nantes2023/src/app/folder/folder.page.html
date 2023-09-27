@@ -16,12 +16,9 @@
 
   <div id="container">
     <div [ngSwitch]=folder>
-      
       <div *ngSwitchCase="'home'"><app-home></app-home></div>
       <div *ngSwitchCase="'sessions'"><app-sessions></app-sessions></div>
       <div *ngSwitchCase="'intervenants'"><app-intervenants></app-intervenants></div>
-      
-
       <div *ngSwitchDefault>Page inexistante</div>
     </div>
   </div>

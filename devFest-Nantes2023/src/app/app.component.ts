@@ -9,7 +9,6 @@ export class AppComponent {
     { title: 'Acceuil', url: '/folder/home', icon: 'mail' },
     { title: 'Sessions', url: '/folder/sessions', icon: 'paper-plane' },
     { title: 'Intervenants', url: '/folder/intervenants', icon: 'heart' },
-    
   ];
   
   constructor() {}
