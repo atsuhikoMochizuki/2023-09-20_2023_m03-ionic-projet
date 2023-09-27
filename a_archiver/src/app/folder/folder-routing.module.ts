@@ -12,18 +12,21 @@ const routes: Routes = [
     path: '',
     component: FolderPage
   },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'conference',
-    component: ListeComponent,
-  },
-  {
-    path: 'intervenants',
-    component: IntervenantsComponent
-  },
+  // {
+  //   path: 'home',
+  //   component: HomeComponent
+  // },
+  // {
+  //   path: 'conferences',
+  //   component: ConferencesComponent,
+  //   children: [
+  //     { path: 'liste', component: ListeComponent }
+  //   ]
+  // },
+  // {
+  //   path: 'intervenants',
+  //   component: IntervenantsComponent
+  // },
 
 
 ];

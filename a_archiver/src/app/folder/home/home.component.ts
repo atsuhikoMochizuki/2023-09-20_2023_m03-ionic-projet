@@ -11,7 +11,9 @@ export class HomeComponent  implements OnInit {
   
 
   constructor(private route: Router,
-          private folderService:FolderServiceService) { }
+          private folderService:FolderServiceService) {
+            console.log("il est rentré dans folder component");
+           }
 
   ngOnInit() {}
 
