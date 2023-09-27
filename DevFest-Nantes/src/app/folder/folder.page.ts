@@ -1,5 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FolderServiceService } from '../shared/services/folder-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-folder',
@@ -12,9 +14,13 @@ export class FolderPage implements OnInit {
   public activatedRoute = inject(ActivatedRoute);
 
   
-  constructor() {}
+  currentPage$!: Observable<string>;
+  
+  constructor(private folderService:FolderServiceService) {}
 
   ngOnInit() {
+   this.currentPage$=this.folderService.currentPage;
+    
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
 
   }

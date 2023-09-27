@@ -10,6 +10,7 @@ import { FolderPage } from './folder.page';
 import { HomeComponent } from './home/home.component';
 import { ConferencesComponent } from './conferences/conferences.component';
 import { IntervenantsComponent } from './intervenants/intervenants.component';
+import { ListeComponent } from './conferences/liste/liste.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { IntervenantsComponent } from './intervenants/intervenants.component';
     IonicModule,
     FolderPageRoutingModule
   ],
-  declarations: [FolderPage, HomeComponent,ConferencesComponent,IntervenantsComponent]
+  declarations: [FolderPage, HomeComponent,ConferencesComponent,IntervenantsComponent,ListeComponent]
 })
 export class FolderPageModule {}
