@@ -10,6 +10,8 @@ import { FolderPage } from './folder.page';
 import { HomeComponent } from '../home/home.component';
 import { SessionsComponent } from '../sessions/sessions.component';
 import { IntervenantsComponent } from '../intervenants/intervenants.component';
+import { DatasService } from '../shared/services/datas.service';
+
 
 @NgModule({
   imports: [
