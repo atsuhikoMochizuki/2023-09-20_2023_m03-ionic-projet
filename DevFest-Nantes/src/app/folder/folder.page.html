@@ -15,7 +15,6 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
     <div [ngSwitch]=folder>
       <div *ngSwitchCase="'home'"><app-home></app-home></div>
       <div *ngSwitchCase="'conferences'"><app-conferences></app-conferences></div>
