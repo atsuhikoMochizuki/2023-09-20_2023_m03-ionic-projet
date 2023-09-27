@@ -16,10 +16,11 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <div *ngIf="folder=='home'">
-      <div>
-        <app-home></app-home>
-      </div>
+    <div [ngSwitch]=folder>
+      <div *ngSwitchCase="'home'"><app-home></app-home></div>
+      <div *ngSwitchCase="'conferences'"><app-conferences></app-conferences></div>
+      <div *ngSwitchCase="'intervenants'"><app-intervenants></app-intervenants></div>
+      <div *ngSwitchDefault>Default</div>
     </div>
   </div>
 </ion-content>
