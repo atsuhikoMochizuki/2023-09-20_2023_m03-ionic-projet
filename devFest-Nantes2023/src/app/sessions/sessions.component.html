@@ -1,7 +1,17 @@
-<div class="listeDesSessions" style="background-color: whitesmoke">
-  <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
-  <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
-</div>
+<ion-grid>
+  <ion-row>
+    <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
+  </ion-row>
+  <ion-row>
+      <ion-col>
+        <div class="listeDesSessions" style="background-color: whitesmoke">
+          <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
+        </div>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+
+
 
 
  
