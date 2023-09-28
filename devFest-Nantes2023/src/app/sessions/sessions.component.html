@@ -1,25 +1,7 @@
-
 <div class="listeDesSessions" style="background-color: whitesmoke">
-  <!-- <app-covoiturage *ngFor="let cov of covoiturages$ | async" [covoituragereserve]="cov"></app-covoiturage> -->
+  <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
   <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
 </div>
-<ion-grid ion-align-items-center>
-  
-  <ion-row class="ion-justify-content-center">
 
-    <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
-  </ion-row>
-  <ion-row class="ion-justify-content-center">
-    <ul>
-      <li *ngFor="let session of listeSessions">
-       {{session}}
-      </li>
-    </ul>
-    
-  </ion-row>
 
-  <ion-row class="ion-justify-content-center">
-   
-    <ion-button (click)="returnHome()">Revenir à l'accueil</ion-button>
-  </ion-row>
-</ion-grid>
+ 

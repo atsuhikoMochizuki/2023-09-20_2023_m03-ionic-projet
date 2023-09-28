@@ -1,9 +1,10 @@
-<div>
-  <strong>session n° {{sessionToShow.id}}</strong>
-  <ul>
-    <li>description : {{sessionToShow.description}}</li>
-    <li>title : {{sessionToShow.title}}</li>
-    <li>liste des intervenants : {{sessionToShow.intervenants}}</li>
-   
-  </ul>
-</div>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>session n°{{sessionToShow.id}}: {{sessionToShow.title}}</ion-card-title>
+    <ion-card-subtitle>Intervenants: {{sessionToShow.speakers}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{sessionToShow.description}}
+  </ion-card-content>
+</ion-card>
