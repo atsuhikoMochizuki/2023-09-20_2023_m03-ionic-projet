@@ -14,13 +14,17 @@ export class SessionsComponent implements OnInit {
 
   listeSessions$?: Observable<Session[]>;
   listeSessions: Session[] = [];
+ 
 
   constructor(private route: Router,
     private datasService: DatasService) { }
 
   ngOnInit() {
     this.datasService.getAllSessions()
-      .forEach(value=>console.log("sessions: "+value));
+    .subscribe(liste=>{
+    this.listeSessions=liste;
+    
+    });
 
   }
 

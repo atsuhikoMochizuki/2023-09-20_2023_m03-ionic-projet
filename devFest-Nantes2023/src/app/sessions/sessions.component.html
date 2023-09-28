@@ -1,4 +1,8 @@
 
+<div class="listeDesSessions" style="background-color: whitesmoke">
+  <!-- <app-covoiturage *ngFor="let cov of covoiturages$ | async" [covoituragereserve]="cov"></app-covoiturage> -->
+  <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
+</div>
 <ion-grid ion-align-items-center>
   
   <ion-row class="ion-justify-content-center">
@@ -8,7 +12,7 @@
   <ion-row class="ion-justify-content-center">
     <ul>
       <li *ngFor="let session of listeSessions">
-        <p>{{session}}</p>
+       {{session}}
       </li>
     </ul>
     
