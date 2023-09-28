@@ -26,21 +26,8 @@ export class SessionResumeComponent implements OnInit {
         // console.log("les intervenants sont : " + speaker);
         this.nomIntervenants.push(this._datasService.getIntervenant(speaker));
      })
-
-
     }
-    // this.sessionToShow.speakers?.forEach(speaker=>console.log(speaker));
-
-    // this._datasService.getAllIntervenants().subscribe(list=>{
-    //   console.log(list);
-    //   let result = list.filter(interv=>interv.id===id)
-    //   if(result.length>0)
-    //   console.log(this.intervenants);
-    // })
-
-    // .subscribe(intervenant=> console.log("intervenant:"+intervenant));
   }
-
 }
 
 //  this.sessionToShow.speakers?.forEach(id => {
