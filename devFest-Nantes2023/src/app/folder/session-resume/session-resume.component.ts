@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { filter } from 'rxjs';
+import { Observable, filter } from 'rxjs';
 import { Intervenant } from 'src/app/shared/models/intervenant';
 import { Session } from 'src/app/shared/models/session';
 import { DatasService } from 'src/app/shared/services/datas.service';
@@ -15,30 +15,40 @@ export class SessionResumeComponent implements OnInit {
 
   title!: string;
   showDetailsInProgress!: boolean;
-  intervenants: Intervenant[] = [];
+  nomIntervenants: Observable<Intervenant|undefined>[]=[];
 
 
   constructor(private _datasService: DatasService) { }
 
   ngOnInit(): void {
-    let id:number = 101;
-    this._datasService.getAllIntervenants().subscribe(list=>{
-      let result = list.filter(interv=>interv.id===id)
-      if(result.length>0)
-      console.log(this.intervenants);
-    })
-    
-        // .subscribe(intervenant=> console.log("intervenant:"+intervenant));
-      }
-      
+    if (this.sessionToShow.speakers) {
+      this.sessionToShow.speakers.forEach(speaker => {
+        // console.log("les intervenants sont : " + speaker);
+        this.nomIntervenants.push(this._datasService.getIntervenant(speaker));
+     })
+
+
+    }
+    // this.sessionToShow.speakers?.forEach(speaker=>console.log(speaker));
+
+    // this._datasService.getAllIntervenants().subscribe(list=>{
+    //   console.log(list);
+    //   let result = list.filter(interv=>interv.id===id)
+    //   if(result.length>0)
+    //   console.log(this.intervenants);
+    // })
+
+    // .subscribe(intervenant=> console.log("intervenant:"+intervenant));
   }
-   
-  //  this.sessionToShow.speakers?.forEach(id => {
-  //     console.log(id);
-  //     this._datasService.getIntervenant(id)
-  //       .subscribe(intervenant => {
-  //         console.log(intervenant);
-  //       })
+
+}
+
+//  this.sessionToShow.speakers?.forEach(id => {
+//     console.log(id);
+//     this._datasService.getIntervenant(id)
+//       .subscribe(intervenant => {
+//         console.log(intervenant);
+//       })
 
 
 

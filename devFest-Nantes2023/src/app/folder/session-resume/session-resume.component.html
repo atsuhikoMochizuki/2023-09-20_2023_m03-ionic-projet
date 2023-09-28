@@ -1,9 +1,11 @@
+
 <ion-card>
   <ion-card-header>
     <ion-card-title>session n°{{sessionToShow.id}}: {{sessionToShow.title}}</ion-card-title>
-    <ion-card-subtitle>Intervenants: {{intervenants}}</ion-card-subtitle>
+    <ion-card-subtitle >Intervenants: {{nomIntervenants}}</ion-card-subtitle>
+    <div *ngFor="let item of nomIntervenants|async">{{item.id}}</div>
   </ion-card-header>
   <ion-card-content>
     {{sessionToShow.description}}
-  </ion-card-content>
+  </ion-card-content> 
 </ion-card>

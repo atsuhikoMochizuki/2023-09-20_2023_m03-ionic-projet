@@ -22,10 +22,14 @@ export class DatasService {
     return this.http.get<any>(`${this.apiURI}speakers`).pipe(map(value => Object.values(value)));
   }
 
-  public getIntervenant(id: number):void {
+  public getIntervenant(id: number): Observable<Intervenant | undefined> {
+    let intervenant: Intervenant;
+    let returnValue: Intervenant;
     console.log("récupération d'un intervebabt");
-    let listeIntervenants = this.http.get<any>(`${this.apiURI}speakers`).pipe(filter(intervenant => intervenant.id === id))
-    listeIntervenants.subscribe(v=>console.log(v));
+    let listeIntervenants = this.http.get<{ [key: number]: Intervenant }>(`${this.apiURI}speakers`)
+      .pipe(map(value => Object.values(value)),
+        map(v => v.find(p => p.id == id)))
+    return listeIntervenants;
   }
 }
 

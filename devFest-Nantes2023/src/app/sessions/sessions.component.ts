@@ -14,7 +14,7 @@ import { Intervenant } from '../shared/models/intervenant';
 export class SessionsComponent implements OnInit {
 
   listeSessions$?: Observable<Session[]>;
-  listeSessions: Session[] = [];
+  listeSessions: Session[] = []; 
  
  
 

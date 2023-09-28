@@ -3,6 +3,6 @@ export interface Session {
     id?: number;
     title?: string;
     description?: string;
-    speakers?: number[];
+    speakers: number[];
   }
   
