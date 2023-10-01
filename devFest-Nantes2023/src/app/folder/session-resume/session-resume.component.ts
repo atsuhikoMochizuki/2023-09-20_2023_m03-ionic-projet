@@ -11,16 +11,31 @@ import { DatasService } from 'src/app/shared/services/datas.service';
 })
 export class SessionResumeComponent implements OnInit {
   @Input() sessionToShow!: Session;
+  @Input() ss!:Array<Intervenant>;
 
   title!: string;
   showDetailsInProgress!: boolean;
   listeNomsIntervenants: Array<Intervenant|undefined> = [];
+  intervenantsMap!: Map<number, Intervenant>;
 
   constructor(private _datasService: DatasService) {}
 
   ngOnInit(): void {
+    this._datasService.getTousIntervenants().subscribe((datas) => {
+      let listeIntervenants = Object.values(datas);
+      
+      for (var i in listeIntervenants) {
+        this.intervenantsMap.set(
+          listeIntervenants[i].id,
+          listeIntervenants[i]
+        );
+      }
+    });
+
     this.sessionToShow.speakers.forEach(speakerId=>{
-      let user = this._datasService.listeIntervenantsMap.get(speakerId);
+
+      
+      
      
       
     })
