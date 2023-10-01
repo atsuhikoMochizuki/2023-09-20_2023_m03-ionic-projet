@@ -14,6 +14,9 @@ import { Intervenant } from '../shared/models/intervenant';
 export class SessionsComponent implements OnInit {
   mapOfSessions!: Map<number, Session>;
   listeSessions!: Array<Session>;
+  listeIntervenants!: Array<Intervenant>;
+
+  intervenantsMap!: Map<number, Intervenant>;
   guigui$!: Observable<Session[]>;
 
   constructor(private route: Router, private _datasService: DatasService) {
@@ -23,12 +26,17 @@ export class SessionsComponent implements OnInit {
   ngOnInit() {
     this._datasService.recupListeSessions().subscribe((value) => {
       this.listeSessions = Object.values(value);
-      console.log(this._datasService.listeIntervenantsMap);
-    console.log("Récupération du élément:")
-    console.log("utilisateur:"+this._datasService.listeIntervenantsMap.get(101)?.name); 
     });
-    
-   
+
+    this._datasService.getTousIntervenants().subscribe((datas) => {
+      this.listeIntervenants = Object.values(datas);
+      for (var i in this.listeIntervenants) {
+        this.intervenantsMap.set(
+          this.listeIntervenants[i].id,
+          this.listeIntervenants[i]
+        );
+      }
+    });
   }
 
   returnHome() {

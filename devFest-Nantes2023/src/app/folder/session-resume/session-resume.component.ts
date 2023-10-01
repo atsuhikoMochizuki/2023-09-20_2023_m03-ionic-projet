@@ -14,11 +14,16 @@ export class SessionResumeComponent implements OnInit {
 
   title!: string;
   showDetailsInProgress!: boolean;
-  listeintervenants: Array<Intervenant> = [];
+  listeNomsIntervenants: Array<Intervenant|undefined> = [];
 
   constructor(private _datasService: DatasService) {}
 
   ngOnInit(): void {
+    this.sessionToShow.speakers.forEach(speakerId=>{
+      let user = this._datasService.listeIntervenantsMap.get(speakerId);
+     
+      
+    })
    
   }
 }

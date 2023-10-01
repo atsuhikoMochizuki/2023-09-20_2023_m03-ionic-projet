@@ -4,13 +4,14 @@
     <!-- <div *ngIf="listeSessions | async as toto">
       {{toto}}
       </div> -->
-      {{listeSessions}}
+      <div *ngFor="let toto of listeIntervenants">{{toto.name}}</div>
   </ion-row>
   <ion-row>
       <ion-col>
+        
         <div class="listeDesSessions" style="background-color: whitesmoke">
           <!-- <div *ngFor="let toto of listeSessions">{{toto.title}}</div> -->
-          <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
+          <!-- <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume> -->
         </div>
       </ion-col>
   </ion-row>
