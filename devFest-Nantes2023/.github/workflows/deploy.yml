@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: deploy_dir
-        path: ./DevFest_Nantes/www
+        path: ./devFest-Nantes2023
   deploy:
     name: Deploy to Github Pages
     runs-on: ubuntu-latest
