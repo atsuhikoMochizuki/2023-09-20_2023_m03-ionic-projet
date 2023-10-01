@@ -1,0 +1,7 @@
+{
+  "name": "devFest-Nantes2023",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

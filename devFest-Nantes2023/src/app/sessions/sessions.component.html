@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row>
+    <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div style="background-color: whitesmoke">
+        <ion-item
+          *ngFor="let session of listeSessions"
+          routerDirection="root"
+          [routerLink]="'/sessions/' + session.id"
+          lines="none"
+          detail="false"
+          routerLinkActive="selected"
+        >
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title (click)="afficherDetails()">
+                session n°{{ session.id }}: {{ session.title }}</ion-card-title
+              >
+            </ion-card-header>
+            <ion-card-content>
+              {{ session.description }}
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

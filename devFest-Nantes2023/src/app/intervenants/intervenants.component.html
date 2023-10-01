@@ -1,0 +1,28 @@
+<ion-grid>
+  <ion-row>
+    <h1>LISTE DES INTERVENANTS DE L'EDITION 2023</h1>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div style="background-color: whitesmoke">
+        <ion-item
+          *ngFor="let interv of listeIntervenants"
+          routerDirection="root"
+          [routerLink]="'/intervenants/' + interv.id"
+          lines="none"
+          detail="false"
+          routerLinkActive="selected"
+        >
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title (click)="afficherDetails()">
+                intervenant n°{{ interv.id }}: {{ interv.name }}</ion-card-title
+              >
+            </ion-card-header>
+            <ion-card-content> Société :{{ interv.company }} </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
