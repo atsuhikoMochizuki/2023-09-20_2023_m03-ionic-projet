@@ -11,3 +11,4 @@ Les données sont accessibles depuis l’adresse : https://devfest-nantes-2018-a
 Exemple d’url pour récupérer les présentateurs : https://devfest-nantes-2018-api.cleverapps.io/
 speakers.
 Vous êtes fortement encouragé à personnaliser l’application. Les maquettes ne sont pas contractuelles ;-).
+
