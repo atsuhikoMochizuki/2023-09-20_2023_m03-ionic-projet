@@ -1,11 +1,16 @@
 <ion-grid>
   <ion-row>
     <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
+    <!-- <div *ngIf="listeSessions | async as toto">
+      {{toto}}
+      </div> -->
+      {{listeSessions}}
   </ion-row>
   <ion-row>
       <ion-col>
         <div class="listeDesSessions" style="background-color: whitesmoke">
-          <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume>
+          <div *ngFor="let toto of listeSessions">{{toto.title}}</div>
+          <!-- <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess"></app-session-resume> -->
         </div>
       </ion-col>
   </ion-row>

@@ -4,7 +4,6 @@ import { Intervenant } from 'src/app/shared/models/intervenant';
 import { Session } from 'src/app/shared/models/session';
 import { DatasService } from 'src/app/shared/services/datas.service';
 
-
 @Component({
   selector: 'app-session-resume',
   templateUrl: './session-resume.component.html',
@@ -15,17 +14,31 @@ export class SessionResumeComponent implements OnInit {
 
   title!: string;
   showDetailsInProgress!: boolean;
-  nomIntervenants: Observable<Intervenant|undefined>[]=[];
+  
 
-
-  constructor(private _datasService: DatasService) { }
+  constructor(private _datasService: DatasService) {}
 
   ngOnInit(): void {
+    // console.log(this._datasService.listeIntervenants.get(101));
+   
+    
+    
     if (this.sessionToShow.speakers) {
-      this.sessionToShow.speakers.forEach(speaker => {
-        // console.log("les intervenants sont : " + speaker);
-        this.nomIntervenants.push(this._datasService.getIntervenant(speaker));
-     })
+      // console.log("********DebutSession n°"+this.sessionToShow.id+"*******")
+      // console.log("les intervenats de la sesison ont le numéro : "+this.sessionToShow.speakers)
+  
+      this.sessionToShow.speakers.forEach((speaker) => {
+        
+      //  console.log( this._datasService.listeIntervenants.get(speaker));
+      
+      // console.log("********FinSession********");
+        
+        
+        
+          
+          
+      });
+     
     }
   }
 }
@@ -36,7 +49,3 @@ export class SessionResumeComponent implements OnInit {
 //       .subscribe(intervenant => {
 //         console.log(intervenant);
 //       })
-
-
-
-
