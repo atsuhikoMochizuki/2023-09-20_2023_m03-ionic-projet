@@ -23,8 +23,11 @@ export class SessionsComponent implements OnInit {
   ngOnInit() {
     this._datasService.recupListeSessions().subscribe((value) => {
       this.listeSessions = Object.values(value);
+      console.log(this._datasService.listeIntervenantsMap);
+    console.log("Récupération du élément:")
+    console.log("utilisateur:"+this._datasService.listeIntervenantsMap.get(101)?.name); 
     });
-    console.log(this._datasService.listeIntervenantsMap);
+    
    
   }
 
