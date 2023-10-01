@@ -9,10 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private route: Router)
-          /*private folderService:FolderServiceService)*/ {
-
-  }
+  constructor(private route: Router){}
 
   ngOnInit() { }
 
@@ -20,6 +17,7 @@ export class HomeComponent implements OnInit {
    
     this.route.navigate(['/folder/sessions/']);
   }
+  
   afficherListeParticipants() {
     this.route.navigate(['/folder/intervenants/']);
   }

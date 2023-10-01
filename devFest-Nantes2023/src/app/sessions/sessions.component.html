@@ -1,23 +1,30 @@
 <ion-grid>
   <ion-row>
     <h1>LISTE DES SESSIONS DE L'EDITION 2023</h1>
-    <!-- <div *ngIf="listeSessions | async as toto">
-      {{toto}}
-      </div> -->
-      <div *ngFor="let toto of listeIntervenants">{{toto.name}}</div>
   </ion-row>
   <ion-row>
-      <ion-col>
-        
-        <div class="listeDesSessions" style="background-color: whitesmoke">
-          <!-- <div *ngFor="let toto of listeSessions">{{toto.title}}</div> -->
-          <!-- <app-session-resume *ngFor="let sess of listeSessions" [sessionToShow]="sess" *ngFor[ss]="let list of listeIntervenants "></app-session-resume> -->
-        </div>
-      </ion-col>
+    <ion-col>
+      <div style="background-color: whitesmoke">
+        <ion-item
+          *ngFor="let session of listeSessions"
+          routerDirection="root"
+          [routerLink]="'/sessions/' + session.id"
+          lines="none"
+          detail="false"
+          routerLinkActive="selected"
+        >
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title (click)="afficherDetails()">
+                session n°{{ session.id }}: {{ session.title }}</ion-card-title
+              >
+            </ion-card-header>
+            <ion-card-content>
+              {{ session.description }}
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </div>
+    </ion-col>
   </ion-row>
 </ion-grid>
-
-
-
-
- 

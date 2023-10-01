@@ -23,6 +23,14 @@ export class DatasService {
     // this.listeSessions = this.recupListeSessions();
   }
 
+  getPresentateurs(){
+    return this.http.get<any>('https://devfest-nantes-2018-api.cleverapps.io/speakers');
+  }
+
+  getSessions(){
+    return this.http.get<any>('https://devfest-nantes-2018-api.cleverapps.io/sessions');
+  }
+
   public getAllSessions(): Observable<Session[]> {   
     return this.http
       .get<any>(`${this.apiURI}sessions`)
