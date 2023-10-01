@@ -14,22 +14,18 @@ import { Intervenant } from '../shared/models/intervenant';
 export class SessionsComponent implements OnInit {
   mapOfSessions!: Map<number, Session>;
   listeSessions!: Array<Session>;
-  guigui$!:Observable<Session[]>;
+  guigui$!: Observable<Session[]>;
 
   constructor(private route: Router, private _datasService: DatasService) {
     // this.mapOfSessions = this._datasService.listeSessions;
   }
 
   ngOnInit() {
-    this._datasService.recupListeSessions()
-      .subscribe(value=>{
-        this.listeSessions = Object.values(value);
-        console.log(this.listeSessions);
-        
-       } );
-    
-
-    
+    this._datasService.recupListeSessions().subscribe((value) => {
+      this.listeSessions = Object.values(value);
+    });
+    console.log(this._datasService.listeIntervenantsMap);
+   
   }
 
   returnHome() {

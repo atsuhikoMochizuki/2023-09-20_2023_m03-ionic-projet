@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   afficherListeSessions() {
-    console.log("il veut afficher la liste des sessions")
+   
     this.route.navigate(['/folder/sessions/']);
   }
   afficherListeParticipants() {

@@ -9,11 +9,14 @@ import { Intervenant } from '../models/intervenant';
 })
 export class DatasService {
   private apiURI: string = 'https://devfest-nantes-2018-api.cleverapps.io/';
-  //  listeIntervenants:Map<number,Intervenant>;
+
+  listeIntervenantsMap: Map<number, Intervenant>=new Map<number,Intervenant>;
+  listeIntervenants:Intervenant[]=[];
   // listeSessions:Map<number,Session>;
 
   constructor(private http: HttpClient) {
-    //  this.listeIntervenants = this.recupListeInstervenants();
+    this.listeIntervenantsMap= this.recupListeInstervenants();
+    
     // this.listeSessions = this.recupListeSessions();
   }
 
@@ -57,35 +60,36 @@ export class DatasService {
         return listeIntervenants;
   } */
 
-  public getIntervenant2(id: number): Observable<Intervenant[]> {
-    console.log('récupération des intervenants');
+  public recupAllIntervenants(): Observable<Intervenant[]> {
     return this.http.get<Intervenant[]>(`${this.apiURI}speakers`);
   }
 
   public getTousIntervenants(): Observable<Intervenant[]> {
-    console.log('récupération des intervenants');
+    // console.log('récupération des intervenants');
     return this.http.get<Intervenant[]>(`${this.apiURI}speakers`);
   }
 
-  public recupListeInstervenants(): Map<number, Intervenant> {
-    let speakers = new Map();
+  public recupListeInstervenants(): Map<number,Intervenant> {
+    let toto = new Map<number,Intervenant>();
     this.http
       .get<Intervenant[]>(`${this.apiURI}speakers`)
       .subscribe((datas) => {
-        for (var i in datas) {
-          speakers.set(datas[i].id?.toString, datas[i]);
-        }
-        speakers.forEach((data) => console.log(data));
-        return speakers;
+
+        // console.log("liste des speakers:"); 
+        this.listeIntervenants = Object.values(datas); 
+       
+        for (var i in this.listeIntervenants) {
+           this.listeIntervenantsMap.set(this.listeIntervenants[i].id, this.listeIntervenants[i]);
+          
+        } 
+        
+          
       });
-    
-      return speakers;
+      return toto;
   }
 
   public recupListeSessions(): Observable<any> {
-   return this.http.get<any>(`${this.apiURI}sessions`);
-    
-   
+    return this.http.get<any>(`${this.apiURI}sessions`);
   }
 
   public recupOneIntervenant(id: number): Intervenant {
@@ -93,7 +97,4 @@ export class DatasService {
 
     return intervenant;
   }
-
-
- 
 }

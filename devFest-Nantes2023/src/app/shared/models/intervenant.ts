@@ -1,5 +1,5 @@
 export interface Intervenant {
-    id?: number;
+    id: number;
     name?: string;
     company?: string;
     companyLogo?: string;
