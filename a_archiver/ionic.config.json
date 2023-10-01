@@ -1,7 +1,0 @@
-{
-  "name": "DevFest-Nantes",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
